@@ -697,7 +697,7 @@ public class LivePreviewModule {
             max = nTmp[1];
         }else {
             min = streamCFG[0].nMinBitRateOptions;
-            max = streamCFG[0].nMaxBitRateOptions;
+            max = 8192;//streamCFG[0].nMaxBitRateOptions;
         }
 
         for (int i=0;i<strBitrate.size();i++){
