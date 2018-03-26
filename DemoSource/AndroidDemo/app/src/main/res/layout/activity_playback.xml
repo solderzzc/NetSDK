@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/parent"
+    tools:context="com.dahuatech.netsdk.activity.PlaybackActivity">
+    <LinearLayout
+        android:id="@+id/selector_continer"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:layout_weight="1"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/select_channel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:theme="@style/ThemeHoloLight"/>
+        <Spinner
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:id="@+id/select_stream_type"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:theme="@style/ThemeHoloLight" />
+    </LinearLayout>
+
+    <SurfaceView
+        android:layout_below="@+id/selector_continer"
+        android:id="@+id/play_back_view"
+        android:layout_width="match_parent"
+        android:layout_height="280dp" />
+    <SeekBar
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/play_back_view"
+        android:max="86400"
+        android:id="@+id/play_back_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="00:00:00"
+        android:layout_below="@+id/play_back_seekbar"
+        android:id="@+id/show_time"
+        android:textSize="6sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/end_time"
+        android:layout_alignRight="@+id/play_function"
+        android:layout_alignEnd="@+id/play_function"
+        android:layout_below="@+id/play_back_seekbar"
+        android:text="23:59:59"
+        android:textSize="6sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:textSize="6sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/current_osd_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/show_time"
+        android:layout_alignTop="@+id/show_time" />
+
+    <LinearLayout
+        android:id="@+id/play_function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/end_time"
+        android:weightSum="4">
+        <Button
+            android:text="@string/play_back_start"
+            android:textAllCaps="false"
+            android:id="@+id/play_start_pause"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="@string/play_back_fast"
+            android:textAllCaps="false"
+            android:id="@+id/play_fast"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="@string/play_back_slow"
+            android:textAllCaps="false"
+            android:id="@+id/play_slow"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textAllCaps="false"
+            android:text="@string/play_back_normal"
+            android:id="@+id/play_normal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play_function"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:textAllCaps="false"
+            android:id="@+id/play_start_time"
+            android:text="@string/play_back_starttime"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textAllCaps="false"
+            android:id="@+id/start_time"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
+            android:text="@string/start_play_back"
+            android:id="@+id/start_playback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
